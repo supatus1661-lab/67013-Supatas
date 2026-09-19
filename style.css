@@ -1,0 +1,278 @@
+/* การตั้งค่าเริ่มต้นและตัวแปรสีฟ้าคราม */
+:root {
+    --primary-cyan: #00838f;      /* ฟ้าครามเข้ม */
+    --secondary-cyan: #26c6da;    /* ฟ้าครามสว่าง */
+    --light-cyan: #e0f7fa;        /* ฟ้าครามอ่อนมาก (พื้นหลัง) */
+    --dark-text: #333333;
+    --light-text: #777777;
+    --white: #ffffff;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--dark-text);
+    line-height: 1.6;
+    background-color: #fcfcfc;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography & Titles */
+.section-title {
+    text-align: center;
+    color: var(--primary-cyan);
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-cyan);
+    margin: 10px auto 0;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.bg-light-cyan {
+    background-color: var(--light-cyan);
+}
+
+/* Header & Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--secondary-cyan) 100%);
+    color: var(--white);
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-img-container {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.hero-text h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-info a {
+    color: var(--white);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    background-color: var(--white);
+    color: var(--primary-cyan);
+}
+
+/* Cards & Layout (Grid) */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Education */
+.school-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--primary-cyan);
+    margin-bottom: 10px;
+}
+
+.card .year {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    color: var(--primary-cyan);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--light-cyan);
+    padding-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style-type: none;
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    color: var(--dark-text);
+    position: relative;
+    padding-left: 20px;
+}
+
+.skill-category ul li::before {
+    content: "•";
+    color: var(--secondary-cyan);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Portfolio */
+.project-card {
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.project-img {
+    width: 100%;
+    height: 180px;
+    /* ในการใช้งานจริง ให้เปลี่ยน tag div นี้เป็น tag img และใส่รูปผลงาน */
+}
+
+.project-card h3 {
+    padding: 20px 20px 5px;
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+/* Experience / Timeline */
+.timeline {
+    border-left: 3px solid var(--secondary-cyan);
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-cyan);
+    border-radius: 50%;
+    position: absolute;
+    left: -29px;
+    top: 5px;
+}
+
+.timeline-item h3 {
+    color: var(--primary-cyan);
+    margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-cyan);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+
+    .grid-2, .grid-3, .skills-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+}
